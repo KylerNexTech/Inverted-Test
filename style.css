@@ -13,7 +13,7 @@ body{
     width: 100vw;
     height: 900px;
     background-size: cover;
-    /* filter: invert(100%); */
+    filter: invert(100%);
 
 }
 
@@ -21,14 +21,15 @@ body{
     position: fixed;
     width: 80px;
     height: 80px;
-    border-radius: 50%;
     background: white;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    border-radius: 50%;
     mix-blend-mode: difference;
-    /* backdrop-filter: invert(1); */
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 999;
 }
+/* backdrop-filter: invert(1);
+pointer-events: none; */
 
 .div3 {
     /* position: absolute; */
