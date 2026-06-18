@@ -1,22 +1,43 @@
 
-
+body{
+    max-width: 1200px;
+    height: 1000px;
+    background-color: red;
+}
 
 .div1{
-    background-color: red;
-    height: 800px;
-    width: auto;
+    /* background-color: lightblue; */
+    
+    background-image: url(https://media.istockphoto.com/id/1248542684/vector/abstract-blurred-colorful-background.jpg?s=612x612&w=0&k=20&c=6aJX8oyUBsSBZFQUCJDP7KZ1y4vrf-wEH_SJsuq7B5I=);
+    /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCLeGZhVc0AhYrdZzjuATERU4ZgCPQR7boJJMjx2RFAA&s=10); */
+    width: 100vw;
+    height: 900px;
+    background-size: cover;
+    /* filter: invert(100%); */
+
 }
 
 .div2{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    mix-blend-mode: difference;
+    /* backdrop-filter: invert(1); */
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+}
 
+.div3 {
+    /* position: absolute; */
     position: absolute;
-    margin: 20% 0 0 40%;
-    width: 200px;
-    height: 200px;
-    background-color: inherit;
-    z-index: 1;
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
-
-    border-radius: 100%;
+    transform-origin: -100px 150px;
+    width: 100%;
+    height: 100px;
+    /* background-color: red; */
+    transform: rotate(35deg);
+    background: linear-gradient(to right,black, white);
+    mix-blend-mode: difference;
 }
