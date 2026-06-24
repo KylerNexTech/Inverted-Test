@@ -13,7 +13,7 @@ body{
     width: 100vw;
     height: 900px;
     background-size: cover;
-    filter: invert(100%);
+    /* filter: invert(100%); */
 
 }
 
@@ -25,6 +25,7 @@ body{
     top: 0;
     left: 0;
     z-index: 999999;
+    border: 3px solid gray;
     border-radius: 50%;
     mix-blend-mode: difference;
 }

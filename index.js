@@ -10,7 +10,7 @@ document.addEventListener('mousemove', (e) => {
     mouseY = e.clientY;
 });
 
-function animate() {
+function animate() {    
     x += (mouseX - x) * 0.15;
     y += (mouseY - y) * 0.15;
 
