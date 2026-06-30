@@ -7,14 +7,36 @@ body{
 
 .div1{
     /* background-color: lightblue; */
-    
-    background-image: url(https://media.istockphoto.com/id/1248542684/vector/abstract-blurred-colorful-background.jpg?s=612x612&w=0&k=20&c=6aJX8oyUBsSBZFQUCJDP7KZ1y4vrf-wEH_SJsuq7B5I=);
+    /* background-image: url(https://media.istockphoto.com/id/1248542684/vector/abstract-blurred-colorful-background.jpg?s=612x612&w=0&k=20&c=6aJX8oyUBsSBZFQUCJDP7KZ1y4vrf-wEH_SJsuq7B5I=); */
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIO-5HP4AF_lg2_OwGJgHqascQ3AZ5JznJezMstv7vPw&s=10);
     /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCLeGZhVc0AhYrdZzjuATERU4ZgCPQR7boJJMjx2RFAA&s=10); */
     width: 100vw;
     height: 900px;
     background-size: cover;
     /* filter: invert(100%); */
 
+}
+
+
+
+.glitch-layer{
+    position:absolute;
+    inset:0;
+    /* background-color:white;
+    color:white;*/
+    mix-blend-mode: difference; 
+    background-size:cover;
+    /* background-position:center; */
+    
+    background-image:inherit;
+   /* backdrop-filter: invert(1); */
+    opacity:70%;
+
+    pointer-events:none;
+    width:inherit;
+    height:inherit;
+    background-position:inherit;
+    z-index:20;
 }
 
 .div2{
@@ -28,6 +50,13 @@ body{
     border: 3px solid gray;
     border-radius: 50%;
     mix-blend-mode: difference;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .25s;
+}
+
+body.cursor-active .div2{
+    opacity: 1;
 }
 /* backdrop-filter: invert(1);
 pointer-events: none; */
@@ -42,4 +71,57 @@ pointer-events: none; */
     transform: rotate(35deg);
     background: linear-gradient(to right,black, white);
     mix-blend-mode: difference;
+}
+
+.div4{
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 450px;
+    background-image: url(https://pe-images.s3.amazonaws.com/photo-effects/invert-colors/photoshop-invert-colors.jpg);
+}
+
+.div5 {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.invert-hover{
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* Makes image fill wrapper */
+
+.invert-hover img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Inverted layer */
+
+.invert-hover::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
+
+    filter: invert(1);
+
+    clip-path: circle(0px at var(--x,50%) var(--y,50%));
+
+    transition: clip-path 1s cubic-bezier(.22, 1, .36, 1);
+
+    pointer-events: none;
+}
+.invert-hover.active::after{
+    clip-path: circle(var(--radius) at var(--x,50%) var(--y,50%));
 }
